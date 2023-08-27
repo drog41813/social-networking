@@ -4,7 +4,6 @@ module.exports = {
   async getThoughts(req, res) {
     try {
       const thoughts = await Thought.find()
-        //.populate({ path: 'tags', select: '-__v' });
 
       res.json(thoughts);
     } catch (err) {
@@ -15,7 +14,6 @@ module.exports = {
   async getSingleThought(req, res) {
     try {
       const thought = await Thought.findOne({ _id: req.params.thoughtId })
-        //.populate({ path: 'tags', select: '-__v' });
 
       if (!thought) {
         return res.status(404).json({ message: 'No post with that ID' });
