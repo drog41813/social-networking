@@ -1,31 +1,50 @@
 const { Schema, model } = require('mongoose');
 
-const tagSchema = new Schema(
+// Schema to create Post model
+const userSchema = new Schema(
   {
-    tagName: {
+    username: {
+      type: String,
+      unique: true,
+      required: true,
+      trim: true
+    },
+    email: {
       type: String,
       required: true,
+      unique: true,
+      match: []
     },
-    color: {
-      type: String,
-      default: '#008080',
-    },
-    createdAt: Date,
+    thoughts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'thought',
+      }
+    ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId, 
+        ref: 'user',
+      },
+    ],
   },
   {
     toJSON: {
       virtuals: true,
     },
+    id: false,
   }
 );
 
-tagSchema
-  .virtual('getTagCss')
+userSchema
+  .virtual('friendCount')
   // Getter
   .get(function () {
-    return `color: ${this.color}`;
-  });
+    return this.friends.length;
+  })
 
-const Tag = model('tag', tagSchema);
+// Initialize our Post model
+const User = model('user', userSchema);
 
-module.exports = Tag;
+module.exports = User;
+
