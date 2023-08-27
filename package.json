@@ -1,5 +1,5 @@
 {
-  "name": "social-network-api",
+  "name": "social-networking",
   "version": "1.0.0",
   "description": "Reverse engineer developer activity for CRUD methods in Mongoose",
   "main": "index.js",
