@@ -12,7 +12,7 @@ Github repo: https://github.com/drog41813/social-networking
 
 ## Credits
 The following individual's github profile indicates partnership in regards to working together and collaborating/sharing constructive ideas with the social-networking assignment: https://github.com/LucasWyski001
-The following individual's github profile indicates partnership in regards to working together and collaborating/sharing constructive ideas with the social-networking assignmentgit a: https://github.com/micavilla
+The following individual's github profile indicates partnership in regards to working together and collaborating/sharing constructive ideas with the social-networking assignment: https://github.com/micavilla
 
 ## License
 MIT License
